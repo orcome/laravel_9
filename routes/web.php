@@ -25,3 +25,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
  * Masters Routes
  */
 Route::resource('masters', App\Http\Controllers\MasterController::class);
+
+/*
+ * Mothers Routes
+ */
+Route::resource('mothers', App\Http\Controllers\MotherController::class);
