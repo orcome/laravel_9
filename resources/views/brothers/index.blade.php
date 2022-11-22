@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="mb-3">
-    <div class="float-right">
+    <div class="float-end">
         @can('create', new App\Models\Brother)
             {{ link_to_route('brothers.create', __('brother.create'), [], ['class' => 'btn btn-success']) }}
         @endcan
@@ -16,10 +16,19 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                {{ Form::open(['method' => 'get', 'class' => 'form-inline']) }}
-                {!! FormField::text('q', ['label' => __('brother.search'), 'placeholder' => __('brother.search_text'), 'class' => 'mx-sm-2']) !!}
-                {{ Form::submit(__('brother.search'), ['class' => 'btn btn-secondary']) }}
-                {{ link_to_route('brothers.index', __('app.reset'), [], ['class' => 'btn btn-link']) }}
+                {{ Form::open(['method' => 'get']) }}
+                <div class="row g-2">
+                    <div class="col-auto">
+                        <label for="q" class="col-form-label">{{ __('brother.search') }}</label>
+                    </div>
+                    <div class="col-auto">
+                        {!! FormField::text('q', ['label' => false, 'placeholder' => __('brother.search_text'), 'class' => 'col-auto']) !!}
+                    </div>
+                    <div class="col-auto">
+                        {{ Form::submit(__('brother.search'), ['class' => 'btn btn-secondary']) }}
+                        {{ link_to_route('brothers.index', __('app.reset'), [], ['class' => 'btn btn-link']) }}
+                    </div>
+                </div>
                 {{ Form::close() }}
             </div>
             <table class="table table-sm table-responsive-sm table-hover">
