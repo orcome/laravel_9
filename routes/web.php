@@ -35,3 +35,8 @@ Route::resource('mothers', App\Http\Controllers\MotherController::class);
  * Brothers Routes
  */
 Route::resource('brothers', App\Http\Controllers\BrotherController::class);
+
+/*
+ * Sisters Routes
+ */
+Route::resource('sisters', App\Http\Controllers\SisterController::class);

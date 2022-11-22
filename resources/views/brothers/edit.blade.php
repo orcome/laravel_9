@@ -41,7 +41,7 @@
                 {{ Form::submit(__('brother.update'), ['class' => 'btn btn-success']) }}
                 {{ link_to_route('brothers.show', __('app.cancel'), [$brother], ['class' => 'btn btn-link']) }}
                 @can('delete', $brother)
-                    {{ link_to_route('brothers.edit', __('app.delete'), [$brother, 'action' => 'delete'], ['class' => 'btn btn-danger float-right', 'id' => 'del-brother-'.$brother->id]) }}
+                    {{ link_to_route('brothers.edit', __('app.delete'), [$brother, 'action' => 'delete'], ['class' => 'btn btn-danger float-end', 'id' => 'del-brother-'.$brother->id]) }}
                 @endcan
             </div>
             {{ Form::close() }}
